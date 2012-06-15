@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="WPFSampleApplication.UserControlTests"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="300" Width="300">
+    <Grid Tag="Sample text">
+        <!--This is an example of good binding-->
+        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}}, Path=Tag}"/>
+
+        <!--This is an example of BAD binding. TagX is not a property of the Grid this will make the unit tests fail-->
+        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}}, Path=TagZ}"/>
+    </Grid>
+</UserControl>
